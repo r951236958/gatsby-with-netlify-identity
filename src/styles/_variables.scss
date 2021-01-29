@@ -1,0 +1,45 @@
+@import '~@react-md/theme/dist/color-palette';
+
+$rmd-theme-dark-elevation: true;
+$rmd-theme-light: false;
+$rmd-theme-primary: $rmd-blue-grey-500;
+$rmd-theme-secondary: $rmd-amber-a-400;
+//$rmd-theme-primary: $rmd-purple-500;
+//$rmd-theme-secondary: $rmd-pink-a-400;
+//$rmd-theme-warning: $rmd-deep-orange-a-200;
+//$rmd-theme-error: $rmd-red-500;
+//$rmd-theme-success: $rmd-green-a-700;
+//$rmd-theme-light-background: #fafafa;
+//$rmd-theme-light-surface: #fff;
+//$rmd-theme-dark-background: #303030;
+//$rmd-theme-dark-surface: $rmd-grey-800;
+
+$rmd-link-color: $rmd-grey-200;
+$rmd-link-hover-color: $rmd-grey-500;
+$rmd-link-visitied-color:$rmd-grey-100;
+
+@import '~react-md/dist/react-md';
+@include react-md-utils;
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include rmd-theme-dark;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    @include rmd-theme-light;
+  }
+}
+
+body.dark,
+.dark-theme {
+  @include rmd-theme-dark;
+}
+
+body.light,
+.light-theme {
+  @include rmd-theme-light;
+}
+

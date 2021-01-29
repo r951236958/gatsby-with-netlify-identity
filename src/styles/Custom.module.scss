@@ -1,0 +1,65 @@
+@import '~@react-md/theme/dist/color-palette';
+@import "~@react-md/elevation/dist/mixins";
+@import "~@react-md/utils/dist/mixins";
+@import '~@react-md/button/dist/mixins';
+@import '~@react-md/icon/dist/mixins';
+@import '~@react-md/theme/dist/mixins';
+// @include rmd-button-theme-values: (
+//   text-border-radius: $rmd-button-text-border-radius,
+//   text-horizontal-padding: $rmd-button-text-horizontal-padding,
+//   text-vertical-padding: $rmd-button-text-vertical-padding,
+//   text-height: $rmd-button-text-height,
+//   text-min-width: $rmd-button-text-min-width,
+//   icon-border-radius: $rmd-button-icon-border-radius,
+//   icon-size: $rmd-button-icon-size,
+//   background-color: $rmd-button-background-color,
+//   color: $rmd-button-color,
+//   outline: $rmd-button-outline-color,
+//   outline-width: $rmd-button-outline-width,
+// )
+
+.link {
+  @include rmd-button-theme(color);
+
+  &:visited,
+  &:hover {
+    @include rmd-button-theme(color);
+  }
+}
+
+.container {
+  @include rmd-utils-optional-css-modules(".rmd-list", true, false) {
+    @include rmd-theme-dark-elevation(6, true);
+  }
+
+  :global .rmd-list {
+    @include rmd-elevation(4);
+
+    margin: 2rem auto;
+    max-width: 25rem;
+  }
+}
+
+.button {
+  @include rmd-button-theme-update-var(outline-width, 2px);
+  @include rmd-button-theme-update-var(text-height, 4rem);
+  @include rmd-button-theme-update-var(text-min-width, 8rem);
+  @include rmd-button-theme-update-var(text-horizontal-padding, 4rem);
+  // @include rmd-button-theme-update-var(text-border-radius, 2rem);
+  // @include rmd-button-theme-update-var(icon-border-radius, 1rem);
+}
+
+.large {
+  @include rmd-button-theme-update-var(icon-size, $rmd-button-icon-size * 2);
+  @include rmd-icon-theme-update-var(size, $rmd-icon-size * 2);
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+
+  :global .rmd-button {
+    margin: 1rem;
+  }
+}
